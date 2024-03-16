@@ -14,11 +14,11 @@ const tests: AppRouteModule = {
   children: [
     {
       path: 'first-test',
-      name: 'FirstTest',
+      name: 'First Test',
       meta: {
         title: 'FirstTest',
       },
-      component: () => import('@/views/first-test.vue'),
+      component: () => import('@/views/tests/first-test.vue'),
     },
   ],
 };

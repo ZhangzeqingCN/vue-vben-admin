@@ -14,7 +14,7 @@ const charts: AppRouteModule = {
     title: t('routes.demo.charts.charts'),
   },
   children: [
-    {
+    /* {
       path: 'baiduMap',
       name: 'BaiduMap',
       meta: {
@@ -37,7 +37,7 @@ const charts: AppRouteModule = {
         title: t('routes.demo.charts.googleMap'),
       },
       component: () => import('@/views/demo/charts/map/Google.vue'),
-    },
+    }, */
 
     {
       path: 'echarts',
