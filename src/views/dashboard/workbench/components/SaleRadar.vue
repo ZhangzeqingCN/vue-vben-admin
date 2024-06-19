@@ -1,5 +1,5 @@
 <template>
-  <Card title="销售统计" :loading="loading">
+  <Card title="系统存取" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -31,7 +31,7 @@
       setOptions({
         legend: {
           bottom: 0,
-          data: ['Visits', 'Sales'],
+          data: ['Read', 'Write'],
         },
         tooltip: {},
         radar: {
@@ -39,22 +39,22 @@
           splitNumber: 8,
           indicator: [
             {
-              name: '2017',
+              name: 'Administrator',
             },
             {
-              name: '2017',
+              name: 'Operator',
             },
             {
-              name: '2018',
+              name: 'Observer',
             },
             {
-              name: '2019',
+              name: 'Supporter',
             },
             {
-              name: '2020',
+              name: 'Visitor',
             },
             {
-              name: '2021',
+              name: 'Customer',
             },
           ],
         },
@@ -72,14 +72,14 @@
             data: [
               {
                 value: [90, 50, 86, 40, 50, 20],
-                name: 'Visits',
+                name: 'Read',
                 itemStyle: {
                   color: '#b6a2de',
                 },
               },
               {
                 value: [70, 75, 70, 76, 20, 85],
-                name: 'Sales',
+                name: 'Write',
                 itemStyle: {
                   color: '#67e0e3',
                 },

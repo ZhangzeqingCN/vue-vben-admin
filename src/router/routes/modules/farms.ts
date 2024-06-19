@@ -13,7 +13,7 @@ const farms: AppRouteModule = {
   },
   children: [
     {
-      path: 'farm-map',
+      path: '/farm-map',
       name: 'Farm Map',
       meta: {
         title: 'Farm Map',

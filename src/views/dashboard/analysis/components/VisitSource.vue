@@ -1,5 +1,5 @@
 <template>
-  <Card title="访问来源" :loading="loading">
+  <Card title="访问来源 Access Source" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -63,10 +63,10 @@
               show: false,
             },
             data: [
-              { value: 1048, name: '搜索引擎' },
-              { value: 735, name: '直接访问' },
-              { value: 580, name: '邮件营销' },
-              { value: 484, name: '联盟广告' },
+              { value: 1048, name: 'Unknown' },
+              { value: 735, name: 'Browser' },
+              { value: 580, name: 'Mobile' },
+              { value: 484, name: 'External Terminal' },
             ],
             animationType: 'scale',
             animationEasing: 'exponentialInOut',

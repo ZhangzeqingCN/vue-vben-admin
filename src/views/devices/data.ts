@@ -47,6 +47,7 @@ export type RowObject = {
   farmId: string;
   lastAccess: string;
   state: string | number;
+  coord: number[];
 };
 
 const types = ['温湿度传感器', '二氧化碳传感器', '酸碱度传感器', '光照传感器'];
@@ -63,14 +64,62 @@ export function getItems(count: number): RowObject[] {
       farmId: mockjs.Random.id(),
       lastAccess: mockjs.Random.datetime(),
       state: states[mockjs.Random.integer(0, states.length - 1)],
+      coord: [],
     };
     items.push(data);
   }
   return items;
 }
 
+const items: RowObject[] = [
+  {
+    id: 'DEVICE#450000199907035012',
+    type: '光照传感器',
+    locationX: 32.25,
+    locationY: 34.26,
+    farmId: 'FARM#4231425',
+    lastAccess: '2024-04-22 18:05:28',
+    state: '正常运作',
+    coord: [116.33494197380253, 39.94960715590372],
+  },
+  {
+    id: 'DEVICE#640000199804231833',
+    type: '酸碱度传感器',
+    locationX: 38.24,
+    locationY: 39.62,
+    farmId: 'FARM#4231425',
+    lastAccess: '2024-04-22 22:47:07',
+    state: '正常运作',
+    coord: [116.33506201070497, 39.94963518803499],
+  },
+  {
+    id: 'DEVICE#420000199204153244',
+    type: '二氧化碳传感器',
+    locationX: 34.23,
+    locationY: 25.32,
+    farmId: 'FARM#4231425',
+    lastAccess: '2024-04-22 21:32:20',
+    state: '正常运作',
+    coord: [116.33508410127467, 39.94951222827521],
+  },
+  {
+    id: 'DEVICE#210000198801096336',
+    type: '温湿度传感器',
+    locationX: 27.42,
+    locationY: 20.34,
+    farmId: 'FARM#4231425',
+    lastAccess: '2024-04-22 08:21:47',
+    state: '低电量',
+    coord: [116.33496526301576, 39.94949632253767],
+  },
+];
+
+export const deviceTableData = items;
+
 export function getResult(): Promise<BasicFetchResult<RowObject>> {
-  const items = getItems(30);
+  // const items = getItems(4);
+
+  // console.log(JSON.stringify(items));
   const result: BasicFetchResult<RowObject> = {
     items,
     total: items.length,

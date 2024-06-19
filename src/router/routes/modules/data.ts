@@ -13,7 +13,7 @@ const data: AppRouteModule = {
   },
   children: [
     {
-      path: 'dyn-chart',
+      path: '/dyn-chart',
       name: 'Dyn Chart',
       meta: {
         title: 'Dyn Chart',

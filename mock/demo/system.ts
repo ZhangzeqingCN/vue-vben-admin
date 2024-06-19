@@ -3,32 +3,58 @@ import { resultError, resultPageSuccess, resultSuccess } from '../_util';
 
 const accountList = (() => {
   const result: any[] = [];
-  for (let index = 0; index < 20; index++) {
-    result.push({
-      id: `${index}`,
-      account: '@first',
-      email: '@email',
-      nickname: '@cname()',
-      role: '@first',
-      createTime: '@datetime',
-      remark: '@cword(10,20)',
-      'dept|0-2': 1,
-      'status|1': ['0', '1'],
-    });
-  }
+  // for (let index = 0; index < 20; index++) {
+  //   result.push({
+  //     id: `${index}`,
+  //     account: '@first',
+  //     email: '@email',
+  //     nickname: '@cname()',
+  //     role: '@first',
+  //     createTime: '2024-03-01',
+  //     remark: '无',
+  //     'dept|0-2': 1,
+  //     'status|1': ['0', '1'],
+  //   });
+  // }
+  result.push({
+    id: 'USER#01',
+    account: 'V_ADMIN',
+    email: '无',
+    nickname: '无',
+    role: 'Administrator',
+    createTime: '2024-04-25',
+    remark: '无',
+    dept: '测试1分部',
+    status: ['0', '1'],
+  });
+  result.push({
+    id: 'USER#02',
+    account: 'TEST',
+    email: '无',
+    nickname: '无',
+    role: 'Administrator',
+    createTime: '2024-04-25',
+    remark: '无',
+    dept: '测试1分部',
+    status: ['0', '1'],
+  });
   return result;
 })();
 
 const roleList = (() => {
   const result: any[] = [];
-  for (let index = 0; index < 4; index++) {
+  const roleNames = ['Adminstrator', 'Operator', 'Observer', 'Supporter'];
+  for (let index = 0; index < roleNames.length; index++) {
     result.push({
       id: index + 1,
       orderNo: `${index + 1}`,
-      roleName: ['超级管理员', '管理员', '文章管理员', '普通用户'][index],
-      roleValue: '@first',
-      createTime: '@datetime',
-      remark: '@cword(10,20)',
+      roleName: roleNames[index],
+      // roleValue: '@first',
+      roleValue: roleNames[index],
+      // createTime: '2024-03-01',
+      createTime: '2024-03-01',
+      // remark: '@cword(10,20)',
+      remark: '无',
       menu: [['0', '1', '2'], ['0', '1'], ['0', '2'], ['2']][index],
       'status|1': ['0', '1'],
     });
@@ -41,10 +67,11 @@ const deptList = (() => {
   for (let index = 0; index < 3; index++) {
     result.push({
       id: `${index}`,
-      deptName: ['华东分部', '华南分部', '西北分部'][index],
+      deptName: ['测试1分部', '测试2分部', '测试3分部'][index],
       orderNo: index + 1,
-      createTime: '@datetime',
-      remark: '@cword(10,20)',
+      createTime: '2024-03-01',
+      // remark: '@cword(10,20)',
+      remark: '无',
       'status|1': ['0', '0', '1'],
       children: (() => {
         const children: any[] = [];
@@ -53,8 +80,9 @@ const deptList = (() => {
             id: `${index}-${j}`,
             deptName: ['研发部', '市场部', '商务部', '财务部'][j],
             orderNo: j + 1,
-            createTime: '@datetime',
-            remark: '@cword(10,20)',
+            createTime: '2024-03-01',
+            // remark: '@cword(10,20)',
+            remark: '无',
             'status|1': ['0', '1'],
             parentDept: `${index}`,
             children: undefined,
@@ -78,7 +106,7 @@ const menuList = (() => {
       menuName: ['Dashboard', '权限管理', '功能'][index],
       permission: '',
       orderNo: index + 1,
-      createTime: '@datetime',
+      createTime: '2024-03-01',
       'status|1': ['0', '0', '1'],
       children: (() => {
         const children: any[] = [];
@@ -96,7 +124,7 @@ const menuList = (() => {
               '/dashboard/test/index',
             ][j],
             orderNo: j + 1,
-            createTime: '@datetime',
+            createTime: '2024-03-01',
             'status|1': ['0', '1'],
             parentMenu: `${index}`,
             children: (() => {
@@ -118,7 +146,7 @@ const menuList = (() => {
                     '/dashboard/test/index',
                   ][j],
                   orderNo: j + 1,
-                  createTime: '@datetime',
+                  createTime: '2024-03-01',
                   'status|1': ['0', '1'],
                   parentMenu: `${index}-${j}`,
                   children: undefined,

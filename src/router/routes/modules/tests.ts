@@ -13,7 +13,7 @@ const tests: AppRouteModule = {
   },
   children: [
     {
-      path: 'first-test',
+      path: '/first-test',
       name: 'First Test',
       meta: {
         title: 'FirstTest',
